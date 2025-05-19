@@ -1,0 +1,260 @@
+
+<!DOCTYPE html> 
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Computers RG Oficial</title>
+  <link rel="stylesheet" type="text/css" href="styl.css">
+</head>
+
+<body bgcolor="#f5f5f5">
+
+  
+  <header class="header">
+    <div class="conteiner">
+      <div class="container mx-auto flex justify-between items-center">
+        <nav class="navbar">
+          <div class="logo"><img src="logito.png" width="60px"></div>
+          <nav class="nav-links">
+            <a href="no.html">proximamente..</a><br>
+            <a href="historia.html">Un poco de nosotros</a><br> 
+            <select id="catalogo" onchange="redireccionar(this.value)">
+              <option value="">Catalogo</option>
+              <option value="compu.html"> Computadoras</option>
+              <option value="teclados.html">Teclados</option>
+              <option value="mauses.html">Mause´s</option>
+              <option value="bocinas.html">Bocinas</option>
+            </select>
+            <script>
+              function redireccionar(seleccion) {
+                window.location.href = seleccion;
+              }
+            </script>
+            <a href="https://www.instagram.com/lukwn/"><img class="insta" src="insta.png" width="35px"></a>
+ <div style="position: absolute; top: 12px; left: 580px; display: flex; gap: 10px;">
+  <a id="btnRegistro" href="o.html" style="background-color: #666666; color: white; border: none; padding: 5px 10px; border-radius: 10px; cursor: pointer;">
+    Registrarse
+  </a>
+  <a id="btnLogin" href="o.html" style="background-color: #666666; color: white; border: none; padding: 5px 10px; border-radius: 10px; cursor: pointer;">
+    Iniciar sesión
+  </a>
+</div>
+             <div class="buscador">
+    <input type="text" id="busqueda" placeholder="Buscar...">
+    <button onclick="buscarProducto()" title="Buscar">
+      <!-- Ícono de lupa SVG -->
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+           stroke-width="2" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round"
+              d="M21 21l-4.35-4.35m0 0A7.5 7.5 0 1011 18.5a7.5 7.5 0 005.65-2.85z" />
+      </svg>
+    </button>
+  </div>
+
+  <div class="error" id="error"></div>
+
+  <script>
+    const productos = {
+      "computadora hp": "compu1.html",
+      "computadora samsung": "compu2.html",
+      "computadora dell": "compu3.html",
+      "computadoras": "compu.html",
+      "teclados": "teclados.html",
+      "teclado sonic": "tec1.html",
+      "teclado hp": "tec2.html",
+      "paquete teclado y mouse": "tec3.html",
+      "mouses": "mauses.html",
+      "wired mouse": "mous1.html",
+      "hp mouse": "mous3.html",
+      "optical mouse": "mous2.html",
+      "bocinas": "bocinas.html",
+      "bocina 1": "boc1.html",
+      "bocina 2": "boc2.html",
+      "bocina 3": "boc3.html"
+    };
+
+    function buscarProducto() {
+      const input = document.getElementById('busqueda').value.trim().toLowerCase();
+      const errorDiv = document.getElementById('error');
+
+      if (productos[input]) {
+        window.location.href = productos[input];
+      } else {
+        errorDiv.textContent = "Producto no encontrado. Intenta escribir el nombre exacto.";
+      }
+    }
+  </script>
+
+          </nav>
+        </nav>
+      </div>
+    </div>
+  </header>
+  <br>
+  <!-- Ícono flotante del carrito -->
+  <div id="icono-carrito" onclick="toggleCarrito()" title="Ver carrito">
+    <img src="https://cdn-icons-png.flaticon.com/512/1170/1170678.png" alt="Carrito" width="26" />
+    <span id="contador-carrito">0</span>
+  </div>
+
+  <!-- Panel del carrito -->
+  <div id="carrito-container" class="hidden">
+    <h3>🛒 Tu carrito</h3>
+    <ul id="carrito-lista"></ul>
+    <p><strong>Total:</strong> $<span id="total-carrito">0.00</span> MXN</p>
+    <button class="vaciar" onclick="vaciarCarrito()">Vaciar carrito</button>
+  </div>
+        </div>
+        <section class="container top-banner">
+        <div class="card-category category-banner">
+            <h2> Computers RG company </h2>
+            <h3>Encuentra las mejores computadoras en esta pagina de confianza<br>
+            desarrollada solo para ti<br><br>Proximamente estaremos ayudando a refugios de mascotas<br> ESPERALO!!<br><br></h3>
+          </div>
+        </section>
+<div class="top-productos">
+  <div class="flecha izquierda" onclick="cambiarCategoria(-1)">❮</div>
+  <span class="active" onclick="mostrarCategoria('destacados', this)">Destacados</span>
+  <span onclick="mostrarCategoria('mejores', this)">Mejores Vendidos</span>
+  <span onclick="mostrarCategoria('recientes', this)">Recientes</span>
+  <div class="flecha derecha" onclick="cambiarCategoria(1)">❯</div>
+</div>
+
+<div class="productos-container">
+  <!-- Destacados -->
+  <div class="card-producto categoria destacados">
+    <a href="compu1.html">
+      <img src="pc1.jpg" alt="Computadora">
+      <p class="precio">HP COMPUTER</p>
+
+    </a>
+  </div><br>
+  <div class="card-producto categoria destacados">
+    <a href="tec1.html">
+      <img src="tec2.jpg" alt="Teclado">
+      <p class="precio">SONY MODEL: BGP-WKB11</p>
+    </a>
+  </div><br>
+  <div class="card-producto categoria destacados">
+    <a href="mous1.html">
+      <img src="maus.jpg" alt="Mouse">
+      <p class="precio">Wired Mouse</p>
+    </a>
+  </div><br>
+  <div class="card-producto categoria destacados">
+    <a href="boc1.html">
+      <img src="boc.jpg" alt="Bocinas">
+      <p class="precio">BOCINAS</p>
+    </a>
+  </div><br>
+
+  <!-- Mejores Vendidos -->
+  <div class="card-producto categoria mejores hidden">
+    <a href="compu2.html">
+      <img src="sam.jpg" alt="Teclado">
+      <p class="precio">Samsung 2015</p>
+    </a>
+  </div><br>
+  <div class="card-producto categoria mejores hidden">
+    <a href="tec2.html">
+      <img src="tec3.jpg" alt="Computadora">
+      <p class="precio">HP TECLADO</p>
+    </a>
+  </div><br>
+  <div class="card-producto categoria mejores hidden">
+    <a href="mous2.html">
+      <img src="mous3.jpg" alt="Bocinas">
+      <p class="precio">Wireless Optical Mouse</p>
+    </a>
+  </div><br>
+  <div class="card-producto categoria mejores hidden">
+    <a href="mous2.html">
+      <img src="boc.jpg" alt="Mouse">
+      <p class="precio">BOCINAS</p>
+    </a>
+  </div><br>
+
+  <!-- Recientes -->
+  <div class="card-producto categoria recientes hidden">
+    <a href="mous3.html">
+      <img src="dell.jpg" alt="Mouse">
+      <p class="precio">DELL 2018</p>
+    </a>
+  </div><br>
+  <div class="card-producto categoria recientes hidden">
+    <a href="tec3.html">
+      <img src="tec.jpg" alt="Teclado">
+      <p class="precio">GBQUIROBE PACK</p>
+    </a>
+  </div><br>
+  <div class="card-producto categoria recientes hidden">
+    <a href="mous3.html">
+      <img src="mous2.jpg" alt="Bocinas">
+      <p class="precio">HP Mouse</p>
+
+
+    </a>
+  </div><br>
+  <div class="card-producto categoria recientes hidden">
+    <a href="boc2.html">
+      <img src="boc.jpg" alt="Computadora">
+      <p class="precio">BOCINAS</p>
+    </a>
+  </div>
+</div>
+
+<script>
+  const categorias = ['destacados', 'mejores', 'recientes'];
+  let categoriaActual = 0;
+
+  function mostrarCategoria(nombreCategoria, btn = null) {
+    const todos = document.querySelectorAll('.categoria');
+    todos.forEach(el => el.classList.add('hidden'));
+
+    const visibles = document.querySelectorAll(`.${nombreCategoria}`);
+    visibles.forEach(el => el.classList.remove('hidden'));
+
+    const botones = document.querySelectorAll('.top-productos span');
+    botones.forEach(s => s.classList.remove('active'));
+
+    if (btn) {
+      btn.classList.add('active');
+      categoriaActual = categorias.indexOf(nombreCategoria);
+    } else {
+      botones[categoriaActual].classList.add('active');
+    }
+  }
+
+  function cambiarCategoria(direccion) {
+    categoriaActual += direccion;
+    if (categoriaActual >= categorias.length) categoriaActual = 0;
+    if (categoriaActual < 0) categoriaActual = categorias.length - 1;
+
+    mostrarCategoria(categorias[categoriaActual]);
+  }
+</script>
+    <section id="contacto">
+        <br><br><center><p>Si tienes alguna duda no dudes en contactarnos.</p>
+
+        <form action="mailto:23402080059345.edu.mx" method="post" enctype="text/plain">
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre" required>
+
+            <label for="email">Correo Electrónico:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="mensaje">Mensaje:</label>
+            <textarea id="mensaje" name="mensaje" rows="4" required></textarea>
+
+            <button type="submit">Enviar Mensaje</button><br><nr><br><br><br><br>
+        </form>
+    </section>
+    <br><br><br><br><br>
+    <footer>
+    &copy; 2025 Computers RG Oficial. Todos los derechos reservados.
+  </footer>
+</body>
+</html>
+</body>
+</html>
